@@ -16,3 +16,7 @@ install dependencies and start development server(make sure [node](https://nodej
   npm install
   expo start
 ```
+
+## Todo
+
+Implement search functionality
