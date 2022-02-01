@@ -5,11 +5,13 @@ import { NativeViewGestureHandler } from "react-native-gesture-handler";
 import { Avatar } from "react-native-elements";
 import Chart from "../Chart/chart";
 const BottomSheetComponent = ({
+  symobol,
   current_price,
   sparkline,
   imageUrl,
   name,
   change_percent,
+  market_cap_rank,
 }) => {
   useEffect(() => {}, [name]);
 
@@ -23,28 +25,33 @@ const BottomSheetComponent = ({
               <Avatar
                 containerStyle={{ margin: 0 }}
                 imageProps={{ resizeMode: "contain" }}
-                size={35}
+                size={40}
                 rounded
                 source={{ uri: imageUrl }}
               />
             </View>
-            <View>
-              <Text style={Styles.coinName}>{name}</Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={Styles.coinSymbol}>{symobol}</Text>
+              <View style={Styles.rankContainer}>
+                <Text style={Styles.coinRank}>#{market_cap_rank}</Text>
+              </View>
             </View>
           </View>
           <View>
-            <Text style={Styles.coinPrice}>
-              {"₹" +
-                current_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </Text>
+            <Text style={Styles.coinName}>{name}</Text>
           </View>
         </View>
         <View>
           <View>
-            <Text style={Styles.coinPrice}>7D</Text>
+            <Text style={Styles.timePeriod}>7D</Text>
           </View>
           <View>
-            <Text style={{ color: change_percent > 0 ? "green" : "red" }}>
+            <Text
+              style={[
+                { color: change_percent > 0 ? "green" : "red" },
+                Styles.percentText,
+              ]}
+            >
               {(change_percent > 0 ? "+" : "") +
                 change_percent.toFixed(2) +
                 "%"}

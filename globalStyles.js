@@ -6,5 +6,9 @@ const Styles = StyleSheet.create({
     backgroundColor: "white",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
+  test: {
+    flex: 1,
+    backgroundColor: "#0a1929",
+  },
 });
 export default Styles;

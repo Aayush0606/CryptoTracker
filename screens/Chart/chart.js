@@ -8,6 +8,7 @@ import {
 } from "@rainbow-me/animated-charts";
 import moment from "moment";
 import { useSharedValue } from "react-native-reanimated";
+import Styles from "./chartStyles";
 
 const { width: SIZE } = Dimensions.get("window");
 
@@ -31,6 +32,9 @@ const Chart = ({ current_price, sparkline }) => {
   useEffect(() => {
     formatSparkline();
     basePrice.value = current_price;
+    setTimeout(() => {
+      setLoading(true);
+    }, 0);
   }, [current_price, sparkline]);
 
   const formatSparkline = () => {
@@ -52,13 +56,13 @@ const Chart = ({ current_price, sparkline }) => {
           smoothingStrategy: "bezier",
         }}
       >
-        <View>
-          <ChartYLabel format={formatUSD} />
-        </View>
-        <View>
-          <ChartPath height={SIZE / 2} stroke="yellow" width={SIZE} />
-          <ChartDot style={{ backgroundColor: "blue" }} />
-        </View>
+        <ChartYLabel style={Styles.chartLabel} format={formatUSD} />
+        {loading && (
+          <View>
+            <ChartPath height={SIZE / 2} stroke="#d32f2f" width={SIZE} />
+            <ChartDot style={{ backgroundColor: "black" }} />
+          </View>
+        )}
       </ChartPathProvider>
     </View>
   );

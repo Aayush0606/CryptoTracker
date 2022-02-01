@@ -12,10 +12,37 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
   },
   coinName: {
-    fontSize: 30,
+    fontSize: 35,
+    fontFamily: "DancingScript_700Bold",
+    color: "#ff8a65",
   },
-  coinPrice: {
+  coinSymbol: {
+    color: "#80cbc4",
     fontSize: 20,
+    fontFamily: "DancingScript_700Bold",
+    marginLeft: 5,
+  },
+  percentText: {
+    fontSize: 25,
+    fontFamily: "Bellota_700Bold_Italic",
+  },
+  timePeriod: {
+    fontSize: 20,
+    fontFamily: "Bellota_700Bold_Italic",
+    color: "#e6ee9c",
+  },
+  coinRank: {
+    fontSize: 20,
+    color: "#ed6a90",
+    fontFamily: "DancingScript_700Bold",
+    textAlign: "center",
+  },
+  rankContainer: {
+    backgroundColor: "#33444d",
+    marginLeft: 10,
+    minWidth: 45,
+    padding: 5,
+    borderRadius: 30,
   },
 });
 export default Styles;

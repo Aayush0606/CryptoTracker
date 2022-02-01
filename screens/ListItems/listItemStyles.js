@@ -19,7 +19,31 @@ const Styles = StyleSheet.create({
   itemContainer: {
     padding: 6,
     margin: 6,
-    backgroundColor: "#eee",
+    backgroundColor: "#001e3c",
+  },
+  titleText: {
+    color: "#8b639d",
+    fontFamily: "DancingScript_600SemiBold",
+    fontSize: 25,
+  },
+  symbolText: {
+    color: "orange",
+    fontFamily: "DancingScript_700Bold",
+  },
+  priceText: {
+    color: "#db8391",
+    fontFamily: "Bellota_700Bold",
+    fontSize: 20,
+  },
+  percentText: {
+    fontFamily: "Bellota_700Bold_Italic",
+    fontSize: 15,
+  },
+  itemComponent: {
+    backgroundColor: "grey",
+  },
+  bottomSheet: {
+    backgroundColor: "#263238",
   },
 });
 export default Styles;

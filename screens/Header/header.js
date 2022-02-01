@@ -7,10 +7,11 @@ const HeaderComponent = () => {
   return (
     <View>
       <Header
+        containerStyle={Styles.header}
         elevated={true}
         centerComponent={{
           text: "Crypto Tracker",
-          style: Styles.header,
+          style: Styles.headerText,
         }}
       />
     </View>
